@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
-public class CountryController:ApiBaseController
+public class CountryController : ApiBaseController
 {
     private readonly ICountryService _countryService;
 
@@ -14,7 +14,11 @@ public class CountryController:ApiBaseController
     {
         _countryService = countryService;
     }
-    
+
+    public IActionResult Test()
+    {
+        return Ok("test");
+    }
     [HttpGet]
-    public async Task<PagedResponse<List<CountryDto>>> GetCountries([FromQuery]CountryFilter filter)=>await _countryService.GetCountries(filter);
+    public async Task<PagedResponse<List<CountryDto>>> GetCountries([FromQuery] CountryFilter filter) => await _countryService.GetCountries(filter);
 }
