@@ -19,6 +19,11 @@ public class CountryController : ApiBaseController
     {
         return Ok("hi");
     }
+
+      public IActionResult SendEmail()
+    {
+        return Ok("hi");
+    }
     [HttpGet]
     public async Task<PagedResponse<List<CountryDto>>> GetCountries([FromQuery] CountryFilter filter) => await _countryService.GetCountries(filter);
 }
