@@ -17,7 +17,7 @@ public class CountryController : ApiBaseController
 
     public IActionResult Test()
     {
-        return Ok("test");
+        return Ok("hello");
     }
     [HttpGet]
     public async Task<PagedResponse<List<CountryDto>>> GetCountries([FromQuery] CountryFilter filter) => await _countryService.GetCountries(filter);
